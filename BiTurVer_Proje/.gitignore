@@ -1,0 +1,38 @@
+Yapay_Zeka/data/
+Yapay_Zeka/models/
+Yapay_Zeka/checkpoints/
+Yapay_Zeka/runs/
+*.pt
+*.pth
+*.onnx
+*.h5
+*.zip
+*.csv
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Python virtual env / packages
+.venv/
+venv/
+env/
+ENV/
+**/site-packages/
+**/Lib/
+**/Scripts/
+
+# Python caches
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python build artifacts
+*.egg-info/
+dist/
+build/
