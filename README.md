@@ -25,6 +25,9 @@ Bu bölümde uygulamanın ve web sitesinin arayüzünden görseller yer almaktad
 <img src="https://via.placeholder.com/200x400?text=Ana+Ekran" alt="Ana Ekran" width="200"/> | <img width="573" height="1301" alt="image" src="https://github.com/user-attachments/assets/089c6187-c568-4371-97a4-a544b82de85f" />
  <img src="https://via.placeholder.com/200x400?text=Hasar+Tespiti" alt="Hasar Tespiti" width="200"/> | <img width="575" height="1314" alt="image" src="https://github.com/user-attachments/assets/59bf36e0-39bb-439f-a100-4ebc1bd05949" />
  <img src="https://via.placeholder.com/200x400?text=Profil" alt="Profil" width="200"/> |
+
+
+
 ### 💻 Web Arayüzü
 <img width="2543" height="1283" alt="image" src="https://github.com/user-attachments/assets/d9c942af-37b7-4477-9b11-63b5ce73f46d" />
 
