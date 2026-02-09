@@ -44,7 +44,10 @@ Modelimiz, çeşitli açılardan çekilmiş binlerce hasarlı ve hasarsız araç
 ### Performans Grafikleri
 | Doğruluk (Accuracy) | Kayıp (Loss) | Karmaşıklık Matrisi (Confusion Matrix) |
 | :---: | :---: | :---: |
-| ![Doğruluk](Yapay_Zeka/grafik_dogruluk.png) | ![Kayıp](Yapay_Zeka/grafik_loss.png) | ![Confusion Matrix](Yapay_Zeka/grafik_confusion_matrix.png) |
+| ![Doğruluk]<img width="1000" height="500" alt="grafik_dogruluk" src="https://github.com/user-attachments/assets/899c4a95-c0f9-4c60-826a-1d7d11de2f01" />
+ | ![Kayıp]<img width="1000" height="500" alt="grafik_loss" src="https://github.com/user-attachments/assets/ce8f2dde-d527-4977-959e-fbc67210ec60" />
+ | ![Confusion Matrix]<img width="800" height="600" alt="grafik_confusion_matrix" src="https://github.com/user-attachments/assets/0d328ba1-e704-4794-8780-d1e7de6c8aa7" />
+ |
 ### 📂 Model ve Veri Seti İndirme Linki
 Eğitilmiş model dosyalarına (`.tflite`, `.h5`) ve kullanılan veri setine aşağıdaki Google Drive linkinden ulaşabilirsiniz:
 👉 **https://drive.google.com/drive/folders/1c0G4guP3AFVjn_A9nhBHCEuXA-Jv3jVW?usp=sharing**  
