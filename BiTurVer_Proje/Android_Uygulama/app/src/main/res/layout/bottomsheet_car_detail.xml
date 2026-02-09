@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/imgCarHero"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_car_hero"
+        android:padding="18dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_car_placeholder"
+        android:contentDescription="Araç görseli" />
+
+    <TextView
+        android:id="@+id/tvHeroTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Renault Clio • Ekonomi"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#263238" />
+
+    <TextView
+        android:id="@+id/tvHeroMeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Otomatik • Benzin • 5 kişi • İstanbul"
+        android:textColor="#607D8B" />
+
+    <TextView
+        android:id="@+id/tvHeroDates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Alış: 05 Oca 2026 • Dönüş: 06 Oca 2026 • 1 gün"
+        android:textColor="#455A64" />
+
+    <TextView
+        android:id="@+id/tvHeroPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Günlük: ₺1450"
+        android:textStyle="bold"
+        android:textColor="#1565C0" />
+
+    <TextView
+        android:id="@+id/tvHeroTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Toplam: ₺1450"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#1565C0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReserveDemo"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:text="Rezervasyon Yap"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        app:backgroundTint="#1565C0"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Not: Rezervasyon cihazınıza kaydedilecektir."
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="#90A4AE" />
+
+</LinearLayout>

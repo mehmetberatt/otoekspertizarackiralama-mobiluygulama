@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Giriş / Kayıt – BiTurVer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="logo-link" aria-label="Ana Sayfa">
+            <span class="logo-icon">
+              <svg
+                width="20"
+                height="14"
+                viewBox="0 0 24 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2 8h18l2 4H0l2-4z" fill="#0f52ff" opacity="0.12" />
+                <path
+                  d="M1 9l2-4h14l2 4"
+                  stroke="#0f52ff"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="6" cy="12" r="1.4" fill="#0f52ff" />
+                <circle cx="16" cy="12" r="1.4" fill="#0f52ff" />
+              </svg>
+            </span>
+          </a>
+          <a href="index.html" class="brand-text">BiTurVer</a>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" /></svg
+            >Ana Sayfa</a
+          >
+          <a href="hasar.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"
+              />
+              <circle cx="12" cy="13" r="4" /></svg
+            >Hasar Tespiti</a
+          >
+          <a href="asistan.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+              /></svg
+            >Asistan</a
+          >
+          <a href="kiralama.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 13l2-4a2 2 0 012-1h8a2 2 0 012 1l2 4" />
+              <path d="M5 17h14" />
+              <circle cx="7" cy="17" r="2" />
+              <circle cx="17" cy="17" r="2" /></svg
+            >Araç Kiralama</a
+          >
+          <a href="giris.html" class="active"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" /></svg
+            >Giriş</a
+          >
+        </nav>
+      </header>
+
+      <main class="container">
+        <h1 class="section-title">BiTurVer'e Hoş Geldiniz</h1>
+        <p class="section-subtitle">
+          Güvenli araç kiralama için giriş yapın veya kayıt olun.
+        </p>
+
+        <div style="max-width: 400px; margin: 0 auto">
+          <div class="card">
+            <div
+              class="tabs"
+              id="auth-tabs"
+              style="display: flex; gap: 8px; justify-content: center"
+            >
+              <button
+                class="active"
+                data-tab="login"
+                style="
+                  padding: 8px 12px;
+                  border-radius: 999px;
+                  border: 1px solid #e5e7eb;
+                  background: #fff;
+                  color: #111;
+                  transition:
+                    background 120ms ease-out,
+                    border-color 120ms ease-out,
+                    box-shadow 120ms ease-out;
+                "
+              >
+                Giriş Yap
+              </button>
+              <button
+                data-tab="register"
+                style="
+                  padding: 8px 12px;
+                  border-radius: 999px;
+                  border: 1px solid #e5e7eb;
+                  background: #f1f5f9;
+                  color: #111;
+                  transition:
+                    background 120ms ease-out,
+                    border-color 120ms ease-out,
+                    box-shadow 120ms ease-out;
+                "
+              >
+                Kayıt Ol
+              </button>
+            </div>
+
+            <!-- Giriş paneli -->
+            <form id="login-panel">
+              <div class="form-group">
+                <label for="email">E-posta</label>
+                <input id="email" type="email" placeholder="ornek@email.com" />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Şifre</label>
+                <input id="password" type="password" placeholder="••••••••" />
+              </div>
+
+              <button
+                class="btn btn-primary"
+                style="
+                  width: 100%;
+                  margin-top: 8px;
+                  background: #111;
+                  color: #fff;
+                  box-shadow: none;
+                "
+              >
+                Giriş Yap
+              </button>
+
+              <div
+                class="small-muted"
+                style="margin-top: 10px; text-align: center"
+              >
+                <a href="#" style="color: #0ea5e9; display: inline-block"
+                  >Şifrenizi mi unuttunuz?</a
+                >
+              </div>
+            </form>
+
+            <!-- Kayıt paneli -->
+            <form id="register-panel" style="display: none">
+              <h2 style="font-size: 22px; margin-bottom: 6px">Kayıt Ol</h2>
+              <p class="small-muted" style="margin-bottom: 12px">
+                Yeni hesap oluşturun
+              </p>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px"
+              >
+                <div class="form-group">
+                  <label>Ad</label>
+                  <input type="text" placeholder="Adınız" />
+                </div>
+                <div class="form-group">
+                  <label>Soyad</label>
+                  <input type="text" placeholder="Soyadınız" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>E-posta</label>
+                <input type="email" placeholder="ornek@email.com" />
+              </div>
+
+              <div class="form-group">
+                <label>Telefon</label>
+                <input type="text" placeholder="0555 555 55 55" />
+              </div>
+
+              <div class="form-group">
+                <label>Ehliyet Numarası</label>
+                <input type="text" placeholder="12345678901" />
+                <div class="small-muted" style="margin-top: 6px">
+                  💡 Gelecekte OCR ile otomatik tarama özelliği eklenecek
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Ehliyet Sınıfı</label>
+                <select>
+                  <option>Seçiniz</option>
+                  <option>B</option>
+                  <option>A2</option>
+                </select>
+              </div>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px"
+              >
+                <div class="form-group">
+                  <label>Şifre</label>
+                  <input type="password" placeholder="••••••••" />
+                </div>
+                <div class="form-group">
+                  <label>Şifre Tekrar</label>
+                  <input type="password" placeholder="••••••••" />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary"
+                style="
+                  width: 100%;
+                  margin-top: 12px;
+                  background: #111;
+                  color: #fff;
+                  box-shadow: none;
+                "
+              >
+                Kayıt Ol
+              </button>
+              <p class="small-muted" style="margin-top: 8px">
+                Kayıt olarak <a href="#">Kullanım Koşulları</a>'nı ve
+                <a href="#">Gizlilik Politikası</a>'nı kabul etmiş olursunuz.
+              </p>
+            </form>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              margin-top: 16px;
+            "
+          >
+            <div class="card">
+              <h3 style="margin-bottom: 8px">Kiralama Koşulları:</h3>
+              <ul class="tips-list">
+                <li>Minimum 21 yaş ve 2 yıl ehliyet</li>
+                <li>Geçerli kimlik ve ehliyet belgesi</li>
+                <li>Kredi kartı ile depozito</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          const tabs = document.querySelectorAll("#auth-tabs button");
+          const loginPanel = document.getElementById("login-panel");
+          const registerPanel = document.getElementById("register-panel");
+          tabs.forEach((btn) =>
+            btn.addEventListener("click", () => {
+              tabs.forEach((b) => {
+                b.classList.remove("active");
+                // Non-active state: slightly off-white for clearer contrast
+                b.style.background = "#f1f5f9";
+                b.style.color = "#111";
+                b.style.borderColor = "#e5e7eb";
+                b.style.boxShadow = "none";
+              });
+              btn.classList.add("active");
+              // Top tabs requested: white background, black text, white border
+              btn.style.background = "#ffffff";
+              btn.style.color = "#111";
+              btn.style.borderColor = "#ffffff";
+              // Add subtle focus ring to make the active state pop
+              btn.style.boxShadow = "0 0 0 3px rgba(15,82,255,0.16)";
+              const tab = btn.getAttribute("data-tab");
+              if (tab === "login") {
+                loginPanel.style.display = "";
+                registerPanel.style.display = "none";
+              } else {
+                loginPanel.style.display = "none";
+                registerPanel.style.display = "";
+              }
+            }),
+          );
+        </script>
+      </main>
+      <footer class="footer">
+        BiTurVer'i tercih ettiğiniz için teşekkürler — © 2025 Tüm hakları
+        saklıdır.
+      </footer>
+    </div>
+  </body>
+</html>

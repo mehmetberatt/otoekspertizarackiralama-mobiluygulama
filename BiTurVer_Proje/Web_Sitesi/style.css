@@ -1,0 +1,940 @@
+/* GENEL AYARLAR */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Sadece renkleri değiştirdik, boyutlara dokunmadık */
+  --primary: #1565c0; /* Eski neon mavi yerine Kurumsal Mavi */
+  --primary-dark: #0d47a1; /* Hover rengi */
+  --primary-soft: #e3f2fd; /* Açık zeminler için */
+
+  /* Diğer ayarlarını (bg, text, border) aynen koru */
+  --bg: #f4f7fb;
+  --text: #0f172a;
+  --muted: #64748b;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* GENEL LAYOUT */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  background: white;
+  color: var(--text);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-left span.logo-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: white;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-links a svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+}
+
+.nav-links a.active {
+  background: var(--text);
+  color: white;
+  font-weight: 600;
+}
+
+.nav-links a:hover:not(.active) {
+  background: rgba(15, 82, 255, 0.06);
+  color: var(--primary-dark);
+}
+
+/* ORTAK CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 6px;
+}
+.brand-text {
+  color: var(--text);
+  font-weight: 800;
+  margin-left: 6px;
+  text-decoration: none;
+}
+
+/* BUTONLAR */
+.btn {
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s,
+    background 0.1s,
+    color 0.1s;
+}
+
+.btn {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 10px 25px rgba(15, 82, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: white;
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-soft);
+}
+
+.btn-outline:hover {
+  background: var(--primary-soft);
+}
+
+/* KART GENEL */
+.card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 20px 22px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.04);
+}
+
+.checklist-card {
+  padding: 42px 46px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 30px 60px rgba(11, 23, 70, 0.06);
+}
+
+.checklist-card .checklist {
+  align-items: center;
+}
+
+.check-row {
+  gap: 18px;
+  align-items: center;
+}
+
+/* make a clean green square badge and render check via pseudo-element (hide emoji text) */
+.check-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #34d399, #16a34a);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.12);
+  color: white;
+  font-size: 0; /* hide existing emoji text */
+  position: relative;
+}
+
+.check-icon::before {
+  content: "\2713";
+  font-size: 14px;
+  color: white;
+  position: relative;
+}
+
+/* ANA SAYFA (index.html) */
+.hero-bg {
+  /* full-bleed solid gradient background (no translucency) */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 120px 0 100px;
+  min-height: 520px;
+  /* stronger blue gradient matching reference */
+  background: linear-gradient(135deg, #2c7bf6 0%, #2a37be 100%);
+  color: #ffffff;
+}
+
+/* Centered static pill above hero buttons (non-interactive) */
+.hero-static {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.98);
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 10px;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 8px 24px rgba(7, 20, 50, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  /* pin the pill to the top center of the hero */
+  position: absolute;
+  top: 84px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+}
+
+@media (max-width: 900px) {
+  .hero-static {
+    top: 18px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+.hero-bg .container {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: transparent;
+}
+
+.hero-bg .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.hero-bg .hero > div {
+  color: white;
+}
+
+.hero-bg .hero-title {
+  font-size: 68px;
+  line-height: 1.05;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: center;
+  max-width: 900px;
+  text-shadow: 0 8px 30px rgba(3, 10, 40, 0.1);
+}
+
+.hero-bg .hero-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 34px;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-bg .hero-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.hero-bg .btn-primary {
+  background: white;
+  color: var(--primary-dark);
+  box-shadow: 0 12px 30px rgba(15, 82, 255, 0.18);
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.hero-bg .btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 14px 28px;
+  border-radius: 12px;
+}
+
+/* Hover motion for outline button (Araç Kirala) and stronger lift for primary button */
+.hero-bg .btn-outline:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hero-bg .btn-primary:hover {
+  transform: translateY(-6px);
+}
+
+@media (max-width: 900px) {
+  .hero-bg {
+    padding: 56px 0 48px;
+    min-height: 380px;
+  }
+  .hero-bg .hero-title {
+    font-size: 36px;
+  }
+  .hero-bg .hero-subtitle {
+    font-size: 15px;
+  }
+  .hero-static {
+    font-size: 13px;
+    padding: 8px 14px;
+    transform: translateY(-6px);
+  }
+  .hero-bg .btn-primary,
+  .hero-bg .btn-outline {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+
+.hero-info-card {
+  margin-top: 18px;
+  border-radius: 14px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hero-info-card .hero-right-badge {
+  position: static;
+  display: inline-block;
+  background: rgba(2, 6, 23, 0.08);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+/* hide original right column (we moved its content into left) */
+.hero-bg .hero-right {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hero-bg .hero-title {
+    font-size: 36px;
+    text-align: center;
+  }
+  .hero-bg {
+    padding: 48px 0;
+  }
+}
+
+/* FEATURE KARTLAR */
+.section-title {
+  font-size: 32px;
+  text-align: center;
+  margin: 12px 0 8px;
+  font-weight: 800;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 26px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.features-grid .card {
+  padding: 28px;
+  border-radius: 14px;
+  transition:
+    box-shadow 0.18s,
+    transform 0.12s,
+    border-color 0.15s;
+}
+
+.features-grid .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(11, 58, 196, 0.08);
+  border-color: rgba(15, 82, 255, 0.18);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(15, 82, 255, 0.06);
+  color: rgba(15, 82, 255, 0.95);
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.feature-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.feature-text {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* GÜVEN / İPUCU BÖLÜMÜ */
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* green outlined circular check icon */
+.check-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--success);
+  box-shadow: none;
+  color: var(--success);
+  font-size: 0; /* hide emoji text */
+  position: relative;
+  flex-shrink: 0;
+}
+
+.check-icon::before {
+  content: "\2713";
+  font-size: 14px;
+  color: var(--success);
+  position: relative;
+}
+
+/* CALL TO ACTION */
+.cta {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 32px 24px;
+  border-radius: 12px;
+  background: transparent; /* actual bg provided by .cta-bg wrapper */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.cta-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.cta-text {
+  font-size: 18px;
+  opacity: 0.95;
+  max-width: 900px;
+  text-align: center;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+/* ALT KISIM */
+.footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 16px;
+}
+
+/* Full-width CTA background (scoped) */
+.cta-bg {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 20px 0 28px;
+  background: linear-gradient(135deg, #0f52ff, #5a3df0);
+  color: white;
+}
+
+.section-icon {
+  text-align: center;
+  font-size: 48px;
+  color: var(--primary);
+  opacity: 0.98;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .features-grid .card {
+    padding: 20px;
+  }
+}
+
+/* ---- HASAR SAYFASI (hasar.html) ---- */
+.grid-two {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr;
+  gap: 24px;
+}
+
+.upload-area {
+  border-radius: 18px;
+  padding: 20px;
+  border: 2px dashed var(--border);
+  background: #f8fafc;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.upload-area h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.upload-area p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.tips-list li {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.analysis-placeholder {
+  border-radius: 18px;
+  border: 2px dashed #cbd5f5;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #93c5fd;
+  font-size: 14px;
+}
+
+/* ---- ASİSTAN (asistan.html) ---- */
+.chat-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  border-radius: 16px;
+  background: white;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.chat-bubble.bot {
+  background: #eff6ff;
+  align-self: flex-start;
+}
+
+.chat-bubble.user {
+  background: #0f52ff;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+/* ---- ARAÇ KİRALAMA (kiralama.html) ---- */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.filters select {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.car-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.car-price {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* ---- GİRİŞ / KAYIT (giris.html) ---- */
+.auth-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+  gap: 26px;
+}
+
+.tabs {
+  display: flex;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+
+.tabs button {
+  flex: 1;
+  border: none;
+  padding: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.tabs button.active {
+  background: var(--primary);
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.small-muted {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero,
+  .grid-two,
+  .chat-layout,
+  .cars-grid,
+  .auth-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .navbar {
+    padding: 10px 14px;
+  }
+  .nav-links {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .features-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+}
+/* 🔽 Uygulama Yönlendirme Bölümü */
+
+.app-download {
+  /* full-bleed app-download background */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f5af2, #2a73ff);
+  color: #ffffff;
+  text-align: center;
+}
+
+.app-download-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.app-download h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.app-download p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* Small info note shown on hasar page when user wants to take a photo */
+.mobile-photo-note {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.mobile-photo-note .note-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(15, 82, 255, 0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.mobile-photo-note a {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.app-download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Genel buton stili */
+.btn-store {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+/* Google Play */
+.btn-store-google {
+  background: #ffffff;
+  color: #0f5af2;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.btn-store-google:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* iOS - yakında */
+.btn-store-apple {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0e7ff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: default;
+}
+
+/* Dönen yükleniyor animasyonu */
+.btn-store-apple .spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Dönen animasyon keyframe'i */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobilde butonların alta alta görünmesi için */
+@media (max-width: 600px) {
+  .btn-store {
+    width: 100%;
+    justify-content: center;
+  }
+}

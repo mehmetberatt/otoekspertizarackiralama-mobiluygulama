@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="?attr/homeAsUpIndicator"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="AI Hasar Tespiti"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_dialog_info"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <!-- Step Indicators -->
+    <LinearLayout
+        android:id="@+id/stepIndicators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <View
+            android:layout_width="24dp"
+            android:layout_height="6dp"
+            android:background="@drawable/dot_active"
+            android:backgroundTint="@color/primary_blue"/>
+            
+        <View
+             android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/dot_inactive"
+            android:backgroundTint="#3B4754"/>
+            
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/dot_inactive"
+            android:backgroundTint="#3B4754"/>
+    </LinearLayout>
+
+    <!-- Instruction Title -->
+    <TextView
+        android:id="@+id/tvInstructionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Aracı çerçeveye hizalayın"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/stepIndicators"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInstructionSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="En iyi sonuç için iyi bir aydınlatma sağlayın"
+        android:textColor="#94A3B8"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvInstructionTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- Scanner Area -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardImageContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@id/controlsArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInstructionSub">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgHasarFoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"
+                android:alpha="0.6" />
+
+            <!-- Corner Borders -->
+            <!-- Use a FrameLayout inside to hold corners with margins -->
+             <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="24dp">
+                
+                 <!-- Top Left -->
+                 <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="top|start"
+                    android:background="@drawable/corner_tl"
+                    android:backgroundTint="@color/primary_blue"/>
+                 <!-- Top Right -->
+                 <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/corner_tr"
+                    android:backgroundTint="@color/primary_blue"/>
+                 <!-- Bottom Left -->
+                 <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom|start"
+                    android:background="@drawable/corner_bl"
+                    android:backgroundTint="@color/primary_blue"/>
+                  <!-- Bottom Right -->
+                 <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/corner_br"
+                    android:backgroundTint="@color/primary_blue"/>
+             </FrameLayout>
+
+            <!-- Scan Line -->
+            <View
+                android:id="@+id/viewScanLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#800F7FF0"
+                android:layout_centerVertical="true"
+                android:visibility="gone" /> <!-- Animated in code -->
+
+            <!-- Top Left Info Badge -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pill_neutral_blur"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:text="TARAMA_ID: 992-X-RF"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="10sp"
+                    android:fontFamily="monospace"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pill_neutral_blur"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:text="ISO 200 | 1/120s"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+
+            <!-- Bottom Confidence Badge -->
+            <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_margin="16dp"
+                 android:background="@drawable/bg_blur_card"
+                 android:gravity="center_vertical"
+                 android:padding="12dp"
+                 android:orientation="horizontal">
+                 <LinearLayout
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:orientation="vertical">
+                      <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GÜVEN ORANI"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="10sp"
+                        android:textStyle="bold"/>
+                      <TextView
+                        android:id="@+id/tvConfidence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%89.4 Uygun Konum"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                 </LinearLayout>
+                 <ImageView
+                     android:layout_width="24dp"
+                     android:layout_height="24dp"
+                     android:src="@android:drawable/ic_menu_compass"
+                     app:tint="@color/primary_blue"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <!-- Result Card (Hidden by default) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:cardBackgroundColor="#1E293B"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="10dp"
+        app:strokeColor="#334155"
+        app:strokeWidth="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottomControls"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInstructionSub">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@android:drawable/ic_dialog_info"
+                app:tint="@color/primary_blue"
+                android:background="@drawable/bg_circle_primary"
+                android:backgroundTint="#330F7FF0"
+                android:padding="16dp"/>
+
+            <TextView
+                android:id="@+id/txtSonuc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SONUÇ"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Durum"
+                android:textColor="#94A3B8"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detaylı açıklama burada yer alacak."
+                android:textColor="#94A3B8"
+                android:textSize="14sp"
+                android:gravity="center"
+                 android:layout_marginTop="12dp"/>
+                 
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tamam"
+                android:onClick="onResultClose" 
+                android:layout_marginTop="24dp"
+                app:cornerRadius="20dp"/> 
+                <!-- Note: onClick handler might need to be added to activity or set via code if we wanted to close it physically, 
+                     but for now just showing UI. User can press back or retake. 
+                     Actually, standard implementation usually hides this on retake. -->
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Controls Area -->
+    <LinearLayout
+        android:id="@+id/controlsArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/timelineMethods">
+        
+        <!-- Gallery -->
+         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGaleri"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            style="@style/Widget.MaterialComponents.Button"
+            app:icon="@android:drawable/ic_menu_gallery"
+            app:iconTint="@color/white"
+            app:backgroundTint="#33FFFFFF" 
+            app:cornerRadius="24dp"
+            app:strokeColor="#80FFFFFF"
+            app:strokeWidth="1dp"
+            android:layout_marginEnd="32dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:iconPadding="0dp"
+            app:iconGravity="textStart"
+            android:padding="0dp"/>
+
+        <!-- Shutter -->
+         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFotoCek"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            style="@style/Widget.MaterialComponents.Button"
+            app:icon="@android:drawable/ic_menu_camera"
+            app:iconSize="32dp"
+            app:iconTint="@color/white"
+            app:backgroundTint="@color/primary_blue"
+            app:cornerRadius="40dp"
+            android:elevation="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:iconPadding="0dp"
+            app:iconGravity="textStart"
+            android:padding="0dp"/>
+
+        <!-- Flash -->
+         <com.google.android.material.button.MaterialButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            style="@style/Widget.MaterialComponents.Button"
+            app:icon="@drawable/ic_flash"
+            app:iconTint="@color/white"
+            app:backgroundTint="#1AFFFFFF"
+            app:cornerRadius="24dp"
+            app:strokeColor="#1AFFFFFF"
+            app:strokeWidth="1dp"
+            android:layout_marginStart="32dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:iconPadding="0dp"
+            app:iconGravity="textStart"
+            android:padding="0dp"/>
+
+    </LinearLayout>
+
+    <!-- Timeline / Steps -->
+    <LinearLayout
+        android:id="@+id/timelineMethods"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#0DFFFFFF" 
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:background="@drawable/bg_rounded_card"
+           android:padding="16dp">
+           
+           <!-- Step 1 -->
+           <LinearLayout
+               android:layout_width="40dp"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               android:gravity="center_horizontal"
+               android:paddingTop="4dp">
+               <ImageView
+                   android:layout_width="20dp"
+                   android:layout_height="20dp"
+                   android:src="@android:drawable/ic_menu_camera"
+                   app:tint="@color/primary_blue"/>
+               <View
+                   android:layout_width="2dp"
+                   android:layout_height="0dp"
+                   android:layout_weight="1"
+                   android:background="@color/primary_blue"
+                   android:layout_marginTop="4dp"/>
+           </LinearLayout>
+           
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:orientation="vertical"
+               android:paddingVertical="4dp">
+               <TextView
+                   android:id="@+id/tvStep1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Fotoğraf"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+               <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MEVCUT ADIM"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="10sp"
+                    android:textStyle="bold"/>
+           </LinearLayout>
+
+            <!-- Divider -->
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#3B4754" android:layout_marginHorizontal="8dp"/>
+
+           <!-- Step 2 -->
+             <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:orientation="vertical"
+               android:paddingVertical="4dp">
+               <TextView
+                   android:id="@+id/tvStep2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. AI Analizi"
+                    android:textColor="#64748B"
+                    android:textStyle="bold"/>
+               <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beklemede"
+                    android:textColor="#64748B"
+                    android:textSize="10sp"/>
+           </LinearLayout>
+           
+             <!-- Divider -->
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#3B4754" android:layout_marginHorizontal="8dp"/>
+
+            <!-- Step 3 -->
+             <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:orientation="vertical"
+               android:paddingVertical="4dp">
+               <TextView
+                   android:id="@+id/tvStep3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Sonuç"
+                    android:textColor="#64748B"
+                    android:textStyle="bold"/>
+               <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beklemede"
+                    android:textColor="#64748B"
+                    android:textSize="10sp"/>
+           </LinearLayout>
+
+       </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Nav Placeholder (Visual consistency with HTML design if needed, or remove if using full screen activity) -->
+    <!-- Creating a simple bottom bar to match the HTML Design "home, repair, chat, person" look -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

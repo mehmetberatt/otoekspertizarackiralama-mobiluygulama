@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BiTurVer – Yapay Zeka Destekli Araç Kiralama</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- NAVBAR -->
+      <header class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="logo-link" aria-label="Ana Sayfa">
+            <span class="logo-icon">
+              <!-- simple car svg -->
+              <svg width="20" height="14" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 8h18l2 4H0l2-4z" fill="#0f52ff" opacity="0.12"/>
+                <path d="M1 9l2-4h14l2 4" stroke="#0f52ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="6" cy="12" r="1.4" fill="#0f52ff"/>
+                <circle cx="16" cy="12" r="1.4" fill="#0f52ff"/>
+              </svg>
+            </span>
+          </a>
+          <a href="index.html" class="brand-text">BiTurVer</a>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Ana Sayfa</a>
+          <a href="hasar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>Hasar Tespiti</a>
+          <a href="asistan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Asistan</a>
+          <a href="kiralama.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13l2-4a2 2 0 012-1h8a2 2 0 012 1l2 4"/><path d="M5 17h14"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Araç Kiralama</a>
+          <a href="giris.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Giriş</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- HERO - full width background -->
+        <section class="hero-bg">
+          <div class="container">
+            <section class="hero">
+              <div>
+                <h1 class="hero-title">
+                  BiTurVer ile Araç Kiralama<br />Artık Daha Güvenli
+                </h1>
+                <p class="hero-subtitle">
+                  Yapay zeka destekli hasar tespiti ve akıllı kiralama çözümü.
+                </p>
+
+                <!-- Static pill (non-clickable) placed above the main action buttons -->
+                <div class="hero-static-row">
+                  <div class="hero-static"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z" fill="rgba(255,255,255,0.95)"/></svg> Yapay Zeka Destekli Platform</div>
+                </div>
+
+                <div class="hero-buttons">
+                  <a href="hasar.html" class="btn btn-primary">
+                    <!-- camera svg -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h3l2-2h6l2 2h3v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7z" stroke="#0f52ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13" r="3" stroke="#0f52ff" stroke-width="1.2"/></svg>
+                    Hasar Tespiti Yap
+                  </a>
+                  <a href="kiralama.html" class="btn btn-outline">
+                    <!-- car svg -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px" xmlns="http://www.w3.org/2000/svg"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.3 7h11.4a2 2 0 0 1 1.8 1.5L21 13" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="1.5" fill="white"/><circle cx="17.5" cy="17" r="1.5" fill="white"/></svg>
+                    Araç Kirala
+                  </a>
+                </div>
+
+                <!-- Move the 'Hasar Analizi Simülasyonu' content into the left column -->
+                <!-- removed demo/info card per request -->
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <div class="container">
+          <!-- NEDEN BİTURVER -->
+          <section>
+            <h2 class="section-title">Neden BiTurVer?</h2>
+            <p class="section-subtitle">
+              Modern teknoloji ve kullanıcı dostu arayüz ile araç kiralama
+              deneyimini yeniden tanımlıyoruz.
+            </p>
+
+            <div class="features-grid">
+              <div class="card">
+                <div class="feature-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h3l2-2h6l2 2h3v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7z" stroke="#0f52ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="feature-title">Yapay Zeka ile Hasar Tespiti</div>
+                <p class="feature-text">
+                  Gelişmiş görüntü işleme teknolojisi ile araç hasarlarını
+                  otomatik tespit edin. Hızlı ve güvenilir analiz.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="feature-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="#0f52ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="feature-title">Akıllı Chatbot Asistan</div>
+                <p class="feature-text">
+                  Kiralama koşulları, hasar değerlendirmesi ve güvenlik hakkında
+                  7/24 destek alın.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="feature-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.3 7h11.4a2 2 0 0 1 1.8 1.5L21 13" stroke="#0f52ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="1.5" fill="#0f52ff"/><circle cx="17.5" cy="17" r="1.5" fill="#0f52ff"/></svg>
+                </div>
+                <div class="feature-title">Kolay Araç Kiralama</div>
+                <p class="feature-text">
+                  Geniş araç filomuzdan size uygun aracı seçin, online rezervasyon
+                  yapın.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 🔽 Uygulama Yönlendirme Bölümü - BAŞLANGIÇ -->
+          <section id="app-download" class="app-download" style="margin-top:48px">
+            <div class="app-download-inner">
+              <h2>BiTurVer Mobil Uygulaması</h2>
+              <p>
+                Uygulamayı indirerek yapay zeka ile hasar tespiti ve araç kiralama
+                deneyimini telefonundan yönetebilirsin.
+              </p>
+
+              <div class="app-download-buttons">
+                <!-- Google Play butonu -->
+                <a
+                  class="btn-store btn-store-google"
+                  href="https://play.google.com/store/apps/details?id=com.biturver.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  📱 Google Play'den İndir
+                </a>
+
+                <!-- App Store (yakında) butonu -->
+                <button class="btn-store btn-store-apple" type="button" disabled>
+                  <span class="spinner"></span>
+                  <span>App Store (Yakında)</span>
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- 🔼 Uygulama Yönlendirme Bölümü - BİTİŞ -->
+
+          <!-- GÜVEN VE ÖZELLİKLER -->
+            <section style="margin-top: 32px">
+              <div class="section-icon">🛡️</div>
+              <h2 class="section-title">Güvenilir ve Yenilikçi</h2>
+            <p class="section-subtitle">
+              BiTurVer, en son yapay zeka teknolojilerini kullanarak size en iyi
+              hizmeti sunar.
+            </p>
+
+            <div class="checklist">
+                <div>
+                  <div class="check-row">
+                    <span class="check-icon">✅</span>
+                    <span
+                      >Transfer Learning ile eğitilmiş MobileNetV2 modeli</span
+                    >
+                  </div>
+                  <div class="check-row">
+                    <span class="check-icon">✅</span>
+                    <span>Detaylı hasar analizi ve maliyet tahmini</span>
+                  </div>
+                  <div class="check-row">
+                    <span class="check-icon">✅</span>
+                    <span>Rekabetçi fiyatlar ve esnek kiralama seçenekleri</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="check-row">
+                    <span class="check-icon">✅</span>
+                    <span>Offline çalışabilen yerel hasar tespiti</span>
+                  </div>
+                  <div class="check-row">
+                    <span class="check-icon">✅</span>
+                    <span>Güvenli ve şeffaf kiralama süreci</span>
+                  </div>
+                  <div class="check-row">
+                    <span class="check-icon">✅</span>
+                    <span>Kapsamlı araç sigortası</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          <!-- CTA (full-width) -->
+        </div>
+        </section>
+
+        <section class="cta-bg">
+          <div class="container">
+            <section class="cta">
+              <div>
+                <div class="cta-title">Hemen Başlayın</div>
+                <div class="cta-text">
+                  BiTurVer ile güvenli ve kolay araç kiralama deneyimini yaşayın.
+                </div>
+              </div>
+              <div class="cta-actions">
+                <a href="giris.html" class="btn btn-outline">Ücretsiz Kayıt Ol</a>
+                <a href="asistan.html" class="btn btn-primary">Asistana Sor</a>
+              </div>
+            </section>
+          </div>
+        </section>
+        </div>
+      </main>
+      <footer class="footer">BiTurVer'i tercih ettiğiniz için teşekkürler — © 2025 Tüm hakları saklıdır.</footer>
+      
+    </div>
+  </body>
+</html>

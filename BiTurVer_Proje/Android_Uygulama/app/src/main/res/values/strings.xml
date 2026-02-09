@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BiTurVer</string>
+    <string name="navigation_drawer_open">Menüyü Aç</string>
+    <string name="navigation_drawer_close">Menüyü Kapat</string>
+    <string name="home_welcome">Hoş geldin</string>
+    <string name="home_instruction">Yapmak istediğin işlemi seç</string>
+    <string name="home_arrow_desc">Aşağıdaki işlemleri seç</string>
+    <string name="home_website_button">Web sitemize git</string>
+    <string name="home_footer">BiTurVer • Demo</string>
+
+    <string name="action_damage">Hasar</string>
+    <string name="action_rent">Kirala</string>
+    <string name="action_license">Ehliyet</string>
+    <string name="action_assistant">Asistan</string>
+
+    <string name="website_url">https://example.com</string>
+</resources>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Akıllı Asistan – BiTurVer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="logo-link" aria-label="Ana Sayfa">
+            <span class="logo-icon">
+              <svg
+                width="20"
+                height="14"
+                viewBox="0 0 24 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2 8h18l2 4H0l2-4z" fill="#0f52ff" opacity="0.12" />
+                <path
+                  d="M1 9l2-4h14l2 4"
+                  stroke="#0f52ff"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="6" cy="12" r="1.4" fill="#0f52ff" />
+                <circle cx="16" cy="12" r="1.4" fill="#0f52ff" />
+              </svg>
+            </span>
+          </a>
+          <a href="index.html" class="brand-text">BiTurVer</a>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" /></svg
+            >Ana Sayfa</a
+          >
+          <a href="hasar.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"
+              />
+              <circle cx="12" cy="13" r="4" /></svg
+            >Hasar Tespiti</a
+          >
+          <a href="asistan.html" class="active"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+              /></svg
+            >Asistan</a
+          >
+          <a href="kiralama.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 13l2-4a2 2 0 012-1h8a2 2 0 012 1l2 4" />
+              <path d="M5 17h14" />
+              <circle cx="7" cy="17" r="2" />
+              <circle cx="17" cy="17" r="2" /></svg
+            >Araç Kiralama</a
+          >
+          <a href="giris.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" /></svg
+            >Giriş</a
+          >
+        </nav>
+      </header>
+
+      <main class="container">
+        <h1 class="section-title">Akıllı Asistan</h1>
+        <p class="section-subtitle">
+          Kiralama, hasar tespiti ve güvenlik hakkında sorularınızı sorun.
+        </p>
+
+        <div class="chat-layout">
+          <div class="chat-window">
+            <div class="chat-messages">
+              <div class="chat-bubble bot">
+                Merhaba! Ben BiTurVer asistanıyım. Araç kiralama, hasar tespiti
+                ve güvenlik konularında yardımcı olabilirim.
+              </div>
+              <div class="chat-bubble user">
+                Araç kiralama koşulları nelerdir?
+              </div>
+              <div class="chat-bubble bot">
+                Minimum 21 yaş ve 2 yıllık ehliyet gerekmektedir. Geçerli kimlik
+                ve kredi kartı ile depozito alınır.
+              </div>
+            </div>
+
+            <div class="chat-input-row">
+              <input type="text" placeholder="Mesajınızı yazın..." />
+              <button class="btn btn-primary">Gönder</button>
+            </div>
+
+            <div class="chip-row">
+              <span class="chip">Araç kiralama koşulları nelerdir?</span>
+              <span class="chip">Hasar tespiti nasıl çalışır?</span>
+              <span class="chip">Minimum yaş sınırı nedir?</span>
+              <span class="chip">Sigorta kapsamı nedir?</span>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h3 style="margin-bottom: 10px">Asistan Hakkında</h3>
+            <p class="small-muted" style="margin-bottom: 10px">
+              BiTurVer Asistanı, yapay zeka destekli bir sohbet robotudur. (Demo
+              arayüz – gerçek API entegrasyonu yoktur.)
+            </p>
+            <p class="small-muted">Size yardımcı olabileceği konular:</p>
+            <ul class="tips-list">
+              <li>Araç kiralama koşulları ve süreçleri</li>
+              <li>Hasar tespiti teknolojisi ve sonuçların yorumlanması</li>
+              <li>Güvenlik değerlendirmeleri</li>
+              <li>Fiyatlandırma ve rezervasyon bilgileri</li>
+              <li>Genel sorularınız</li>
+            </ul>
+          </aside>
+        </div>
+      </main>
+      <footer class="footer">
+        BiTurVer'i tercih ettiğiniz için teşekkürler — © 2025 Tüm hakları
+        saklıdır.
+      </footer>
+    </div>
+  </body>
+</html>

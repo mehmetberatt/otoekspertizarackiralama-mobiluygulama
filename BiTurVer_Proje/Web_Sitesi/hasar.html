@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hasar Tespiti – BiTurVer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="logo-link" aria-label="Ana Sayfa">
+            <span class="logo-icon">
+              <svg
+                width="20"
+                height="14"
+                viewBox="0 0 24 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2 8h18l2 4H0l2-4z" fill="#0f52ff" opacity="0.12" />
+                <path
+                  d="M1 9l2-4h14l2 4"
+                  stroke="#0f52ff"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="6" cy="12" r="1.4" fill="#0f52ff" />
+                <circle cx="16" cy="12" r="1.4" fill="#0f52ff" />
+              </svg>
+            </span>
+          </a>
+          <a href="index.html" class="brand-text">BiTurVer</a>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" /></svg
+            >Ana Sayfa</a
+          >
+          <a href="hasar.html" class="active"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"
+              />
+              <circle cx="12" cy="13" r="4" /></svg
+            >Hasar Tespiti</a
+          >
+          <a href="asistan.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+              /></svg
+            >Asistan</a
+          >
+          <a href="kiralama.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 13l2-4a2 2 0 012-1h8a2 2 0 012 1l2 4" />
+              <path d="M5 17h14" />
+              <circle cx="7" cy="17" r="2" />
+              <circle cx="17" cy="17" r="2" /></svg
+            >Araç Kiralama</a
+          >
+          <a href="giris.html"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" /></svg
+            >Giriş</a
+          >
+        </nav>
+      </header>
+
+      <main class="container">
+        <h1 class="section-title">Yapay Zeka ile Hasar Tespiti</h1>
+        <p class="section-subtitle">
+          Araç fotoğrafınızı yükleyin, yapay zeka teknolojimiz hasarları
+          otomatik tespit etsin.
+        </p>
+
+        <div
+          class="demo-note card"
+          style="
+            margin: 16px 0;
+            padding: 12px;
+            border-left: 4px solid rgba(15, 82, 255, 0.12);
+          "
+        >
+          <div style="display: flex; gap: 10px; align-items: flex-start">
+            <div
+              style="
+                width: 24px;
+                height: 24px;
+                border-radius: 6px;
+                background: rgba(15, 82, 255, 0.06);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary);
+                font-weight: 700;
+                font-size: 12px;
+              "
+            >
+              i
+            </div>
+            <div style="font-size: 14px; color: var(--muted)">
+              <strong>Demo Modu:</strong> Bu sayfa, hasar tespiti özelliğinin
+              bir simülasyonunu göstermektedir. Gerçek uygulamada TensorFlow
+              Lite ile canlı hasar analizi yapılmaktadır.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-two" style="align-items: stretch">
+          <div>
+            <div
+              class="card"
+              style="display: flex; flex-direction: column; height: 100%"
+            >
+              <div class="upload-area">
+                <h3>Fotoğraf Yükle</h3>
+                <p>Aracın hasarını tespit etmek için bir fotoğraf seçin</p>
+                <svg
+                  width="56"
+                  height="56"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  style="margin: 20px auto; display: block"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2v16m-6-6l6 6 6-6"
+                    stroke="#64748b"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <button class="btn btn-primary">Dosya Seç</button>
+                <p
+                  style="font-size: 11px; color: var(--muted); margin-top: 6px"
+                >
+                  veya sürükleyip bırakın
+                </p>
+              </div>
+
+              <button
+                class="btn btn-primary"
+                style="
+                  width: 100%;
+                  margin-top: 16px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 8px;
+                "
+              >
+                📷 Fotoğraf Çek
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style="animation: spin 1s linear infinite"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-dasharray="31.4 31.4"
+                    stroke-linecap="round"
+                    opacity="0.3"
+                  />
+                  <path
+                    d="M12 2a10 10 0 0 1 10 10"
+                    stroke="white"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <style>
+                @keyframes spin {
+                  from {
+                    transform: rotate(0deg);
+                  }
+                  to {
+                    transform: rotate(360deg);
+                  }
+                }
+              </style>
+
+              <div class="mobile-photo-note" style="margin-top: 12px">
+                <div class="note-icon">📱</div>
+                <div>
+                  Fotoğraf çekmek istiyorsanız lütfen mobil uygulamamızı indirin
+                  —
+                  <a href="index.html#app-download">Google Play'den indir</a>.
+                  (App Store (Yakında))
+                </div>
+              </div>
+
+              <div
+                style="
+                  margin-top: 14px;
+                  padding: 12px;
+                  background: #eff6ff;
+                  border-radius: 10px;
+                "
+              >
+                <h3
+                  style="
+                    font-size: 14px;
+                    margin-bottom: 6px;
+                    color: var(--primary);
+                    font-weight: 600;
+                  "
+                >
+                  💡 İpucu:
+                </h3>
+                <ul
+                  class="tips-list"
+                  style="
+                    list-style-position: inside;
+                    margin: 0;
+                    padding-left: 0;
+                  "
+                >
+                  <li>Aracın tamamını kapsayan net bir fotoğraf çekin.</li>
+                  <li>İyi aydınlatılmış bir ortamda çekim yapın.</li>
+                  <li>Hasarlı bölgeyi yakından gösterin.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="card"
+              style="display: flex; flex-direction: column; height: 100%"
+            >
+              <h3 style="margin-bottom: 8px; font-size: 16px">
+                Analiz Sonuçları (Simülasyon)
+              </h3>
+              <div
+                class="analysis-placeholder"
+                style="
+                  flex: 1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                "
+              >
+                <div style="font-size: 56px; margin-bottom: 16px; opacity: 0.5">
+                  📷
+                </div>
+                <div style="text-align: center">
+                  <div
+                    style="
+                      font-size: 16px;
+                      color: #64748b;
+                      font-weight: 600;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    Analiz sonuçları burada görünecek
+                  </div>
+                  <div style="font-size: 12px; color: #93c5fd">
+                    Fotoğraf yüklendikten sonra sonuçlar gösterilecektir
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teknoloji Detayları: Tek beyaz kutu içinde -->
+        <div
+          class="card"
+          style="
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            padding: 24px;
+          "
+        >
+          <div>
+            <h3 style="font-size: 15px; margin-bottom: 10px; font-weight: 600">
+              🧠 Yapay Zeka Modeli
+            </h3>
+            <ul
+              class="tips-list"
+              style="margin: 0; padding-left: 14px; font-size: 13px"
+            >
+              <li><strong>Model:</strong> MobileNetV2 (Transfer Learning)</li>
+              <li><strong>Framework:</strong> TensorFlow Lite</li>
+              <li><strong>Veri Seti:</strong> Kaggle Car Damage Detection</li>
+              <li><strong>Simüller:</strong> Hasarlı / Sağlam</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-size: 15px; margin-bottom: 10px; font-weight: 600">
+              ⚡ Özellikler
+            </h3>
+            <ul
+              class="tips-list"
+              style="margin: 0; padding-left: 14px; font-size: 13px"
+            >
+              <li>Offline çalışma (yerel model)</li>
+              <li>Hızlı analiz (224x224 görüntü işleme)</li>
+              <li>Yüksek doğruluk oranı (%85+)</li>
+              <li>Hasar türü ve konum tespiti</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        BiTurVer'i tercih ettiğiniz için teşekkürler — © 2025 Tüm hakları
+        saklıdır.
+      </footer>
+    </div>
+  </body>
+</html>
